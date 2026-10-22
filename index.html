@@ -27,7 +27,7 @@
   <footer>Atualizado em 22/10/2026 · WZ Turismo</footer>
   <script>
     // Avisa a página do site (UOL) a altura real, para o iframe não sobrar espaço em branco
-    function avisa(){ try { parent.postMessage({ wzVitrineAltura: document.documentElement.scrollHeight }, '*'); } catch(e){} }
+    function avisa(){ try { parent.postMessage({ wzVitrineAltura: Math.ceil(document.body.getBoundingClientRect().height) }, '*'); } catch(e){} }
     window.addEventListener('load', avisa); window.addEventListener('resize', avisa);
     document.querySelectorAll('img').forEach(function(i){ i.addEventListener('load', avisa); });
     setTimeout(avisa, 1500);
