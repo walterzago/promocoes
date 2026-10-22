@@ -25,4 +25,11 @@
   <header><h2>✈️ Promoções da semana</h2><p>Valores sujeitos a alteração e disponibilidade. Fale com a WZ Turismo para confirmar.</p></header>
   <p class="vazio">Novas promoções em breve! Chame a WZ no WhatsApp.</p>
   <footer>Atualizado em 22/10/2026 · WZ Turismo</footer>
+  <script>
+    // Avisa a página do site (UOL) a altura real, para o iframe não sobrar espaço em branco
+    function avisa(){ try { parent.postMessage({ wzVitrineAltura: document.documentElement.scrollHeight }, '*'); } catch(e){} }
+    window.addEventListener('load', avisa); window.addEventListener('resize', avisa);
+    document.querySelectorAll('img').forEach(function(i){ i.addEventListener('load', avisa); });
+    setTimeout(avisa, 1500);
+  </script>
 </body></html>
